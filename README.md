@@ -29,8 +29,8 @@ Designed for **mass recon usage**: efficient, memory-safe, and capable of handli
 Clone the repository and make the script executable:
 
 ```bash
-git clone https://github.com/yourusername/ip-generator-tool.git
-cd ip-generator-tool
+git clone https://github.com/akashsmay24/ipgen.git
+cd ipgen
 chmod +x ipgen.py
 ```
 
