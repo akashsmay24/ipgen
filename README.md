@@ -30,7 +30,7 @@ Clone the repository and make the script executable:
 ```bash
 git clone https://github.com/yourusername/ip-generator-tool.git
 cd ip-generator-tool
-chmod +x tool.py
+chmod +x ipgen.py
 ```
 
 ---
@@ -39,12 +39,12 @@ chmod +x tool.py
 
 ### Single Range Input
 ```bash
-./tool.py -r 192.168.1.0/24 -o ips.txt --format txt
+./ipgen.py -r 192.168.1.0/24 -o ips.txt --format txt
 ```
 
 ### File Input
 ```bash
-./tool.py -i ranges.txt -o ips.json --format json
+./ipgen.py -i ranges.txt -o ips.json --format json
 ```
 
 Example `ranges.txt`:
@@ -56,12 +56,12 @@ Example `ranges.txt`:
 
 ### Verbose Mode
 ```bash
-./tool.py -r 10.0.0.0/8 -o big.txt --format txt -v
+./ipgen.py -r 10.0.0.0/8 -o big.txt --format txt -v
 ```
 
 ### Deduplicate & Count
 ```bash
-./tool.py -i ranges.txt -o unique_ips.txt --format txt --unique --count
+./ipgen.py -i ranges.txt -o unique_ips.txt --format txt --unique --count
 ```
 
 ---
