@@ -1,4 +1,5 @@
-# Mass Recon IP Generator Tool
+#ipgen
+
 
 A Python 3 command-line utility for Kali Linux that generates a full list of IP addresses from given IP ranges.  
 Supports both single range input and bulk file input, with export options in **TXT** or **JSON** format.  
@@ -30,7 +31,21 @@ Clone the repository and make the script executable:
 ```bash
 git clone https://github.com/yourusername/ip-generator-tool.git
 cd ip-generator-tool
-chmod +x ipgen.py
+chmod +x tool.py
+```
+
+### 🔗 Global Access via `ipgen`
+To use the tool anywhere in your CLI by simply typing `ipgen`, move it into your system’s PATH:
+
+```bash
+sudo mv tool.py /usr/local/bin/ipgen
+sudo chmod +x /usr/local/bin/ipgen
+```
+
+Now you can run the tool globally:
+
+```bash
+ipgen -r 192.168.1.0/24 -o ips.txt --format txt
 ```
 
 ---
@@ -39,12 +54,12 @@ chmod +x ipgen.py
 
 ### Single Range Input
 ```bash
-./ipgen.py -r 192.168.1.0/24 -o ips.txt --format txt
+ipgen -r 192.168.1.0/24 -o ips.txt --format txt
 ```
 
 ### File Input
 ```bash
-./ipgen.py -i ranges.txt -o ips.json --format json
+ipgen -i ranges.txt -o ips.json --format json
 ```
 
 Example `ranges.txt`:
@@ -56,12 +71,12 @@ Example `ranges.txt`:
 
 ### Verbose Mode
 ```bash
-./ipgen.py -r 10.0.0.0/8 -o big.txt --format txt -v
+ipgen -r 10.0.0.0/8 -o big.txt --format txt -v
 ```
 
 ### Deduplicate & Count
 ```bash
-./ipgen.py -i ranges.txt -o unique_ips.txt --format txt --unique --count
+ipgen -i ranges.txt -o unique_ips.txt --format txt --unique --count
 ```
 
 ---
@@ -116,3 +131,5 @@ Example `ranges.txt`:
 - Uses only **standard libraries** (`argparse`, `ipaddress`, `json`, `os`, `sys`)
 - Production-ready for **Kali Linux** environments
 - Modular functions with clear comments
+
+---
