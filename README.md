@@ -31,16 +31,52 @@ Clone the repository and make the script executable:
 ```bash
 git clone https://github.com/yourusername/ip-generator-tool.git
 cd ip-generator-tool
-chmod +x tool.py
+chmod +x ipgen.py
 ```
 
 ### 🔗 Global Access via `ipgen`
 To use the tool anywhere in your CLI by simply typing `ipgen`, move it into your system’s PATH:
 
 ```bash
+sudo mv ipgen.py /usr/local/bin/ipgen
+sudo chmod +x /usr/local/bin/ipgen
+```
+`/usr/local/bin` is part of the **default system PATH** on most Linux distributions, including Kali Linux. That means if you move your script there and make it executable, you can call it globally as `ipgen` without needing to modify anything else.
+
+However, since PATH configurations can vary depending on the system setup. Here’s how you could check or customize the PATH:
+
+### 🔗 Global Access via `ipgen`
+
+To use the tool anywhere in your CLI by simply typing `ipgen`, move it into a directory that is included in your system’s PATH (commonly `/usr/local/bin`):
+
+```bash
 sudo mv tool.py /usr/local/bin/ipgen
 sudo chmod +x /usr/local/bin/ipgen
 ```
+
+Now you can run the tool globally:
+
+```bash
+ipgen -r 192.168.1.0/24 -o ips.txt --format txt
+```
+
+#### 🛠️ Custom PATH Setup
+If `/usr/local/bin` is not in your PATH, you can:
+- Check your PATH with:
+  ```bash
+  echo $PATH
+  ```
+- Add a custom directory to your PATH by editing `~/.bashrc` or `~/.zshrc`:
+  ```bash
+  export PATH=$PATH:/path/to/your/scripts
+  ```
+- Reload your shell:
+  ```bash
+  source ~/.bashrc
+  ```
+
+This way, you can place `ipgen` in any directory you prefer and still access it globally.
+
 
 Now you can run the tool globally:
 
